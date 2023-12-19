@@ -4,7 +4,7 @@ import { doc, setDoc } from "firebase/firestore";
 import useShowToast from "./useShowToast";
 
 const useSignUpWithEmailAndPassword = () => {
-  const [createUserWithEmailAndPassword, loading, error] =
+  const [createUserWithEmailAndPassword, , loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const showToast = useShowToast();
 
