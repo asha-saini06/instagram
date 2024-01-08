@@ -1,44 +1,11 @@
-import { Avatar, Box, Button, Flex, Link, Tooltip } from "@chakra-ui/react";
+import { Box, Button, Flex, Link, Tooltip } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
-import {
-  CreatePostLogo,
-  InstagramLogo,
-  InstagramMobileLogo,
-  NotificationsLogo,
-  SearchLogo,
-} from "../../assets/constants";
+import { InstagramLogo, InstagramMobileLogo } from "../../assets/constants";
 
-import { AiFillHome } from "react-icons/ai";
 import { BiLogOut } from "react-icons/bi";
 import useLogout from "../../hooks/useLogout";
 
 const Sidebar = () => {
-  // eslint-disable-next-line no-unused-vars
-  const sidebarItems = [
-    {
-      icon: <AiFillHome size={25} />,
-      text: "Home",
-      link: "/",
-    },
-    {
-      icon: <SearchLogo />,
-      text: "Search",
-    },
-    {
-      icon: <NotificationsLogo />,
-      text: "Notifications",
-    },
-    {
-      icon: <CreatePostLogo />,
-      text: "Create",
-    },
-    {
-      icon: <Avatar size={"sm"} name="Ian" src="/profilepic.png" />,
-      text: "Profile",
-      link: "/asha",
-    },
-  ];
-
   const { handleLogout, isLoggingOut } = useLogout();
   return (
     <Box
