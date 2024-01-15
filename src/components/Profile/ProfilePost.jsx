@@ -38,7 +38,7 @@ const ProfilePost = ({ post }) => {
   const decrementPostsCount = useUserProfileStore((state) => state.deletePost);
 
   const handleDeletePost = async () => {
-    if (!window.confirm("Are you sure you wantto delete this post? ")) return;
+    if (!window.confirm("Are you sure you want to delete this post? ")) return;
     if (isDeleting) return;
     try {
       const imageRef = ref(storage, `posts/${post.id}`);
@@ -179,28 +179,13 @@ const ProfilePost = ({ post }) => {
                   maxH={"350px"}
                   overflowY={"auto"}
                 >
-                  <Comment
-                    createdAt="1h ago"
-                    username="panda"
-                    profilePic="https://i.pinimg.com/736x/f0/a7/4d/f0a74df6eb66ebb33743e80beec91a1c.jpg"
-                    text={"panda janai"}
-                  />
-                  <Comment
-                    createdAt="12h ago"
-                    username="inumaki"
-                    profilePic="https://i.pinimg.com/originals/01/3f/31/013f3192d737ded2d8dace7842a25a7b.jpg"
-                    text={"tuna mayo"}
-                  />
-                  <Comment
-                    createdAt="12h ago"
-                    username="inumaki"
-                    profilePic="https://i.pinimg.com/originals/01/3f/31/013f3192d737ded2d8dace7842a25a7b.jpg"
-                    text={"しお"}
-                  />
+                  {post.comments.map((comment) => (
+                    <Comment key={comment.id} comment={comment} />
+                  ))}
                 </VStack>
                 <Divider my={4} bg={"gray.800"} />
 
-                <PostFooter isProfilePage={true} />
+                <PostFooter isProfilePage={true} post={post} />
               </Flex>
             </Flex>
           </ModalBody>
