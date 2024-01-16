@@ -22,19 +22,18 @@ const usePostComment = () => {
       createdBy: authUser.uid,
       postId,
     };
-
     try {
       await updateDoc(doc(firestore, "posts", postId), {
         comments: arrayUnion(newComment),
       });
-
-      addComment(postId, comment);
+      addComment(postId, newComment);
     } catch (error) {
       showToast("Error", error.message, "error");
     } finally {
       setIsCommenting(false);
     }
   };
+
   return { isCommenting, handlePostComment };
 };
 
