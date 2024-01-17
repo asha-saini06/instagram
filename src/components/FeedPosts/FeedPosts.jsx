@@ -41,8 +41,8 @@ const FeedPosts = () => {
             Whoa, friend count looking a bit lean, huh?
           </Text>
           <Text color={"red.400"}>
-            Pause the coding marathon and let's turn it into a social spree!
-            🚀🤝
+            Pause the coding marathon and let&apos;s turn it into a social
+            spree! 🚀🤝
           </Text>
         </>
       )}

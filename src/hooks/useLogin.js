@@ -1,7 +1,7 @@
-import { doc, getDoc } from "firebase/firestore";
-import { auth, firestore } from "../firebase/firebase";
-import useShowToast from "./useShowToast";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import useShowToast from "./useShowToast";
+import { auth, firestore } from "../firebase/firebase";
+import { doc, getDoc } from "firebase/firestore";
 import useAuthStore from "../store/authStore";
 
 const useLogin = () => {
@@ -31,6 +31,7 @@ const useLogin = () => {
       showToast("Error", error.message, "error");
     }
   };
+
   return { loading, error, login };
 };
 

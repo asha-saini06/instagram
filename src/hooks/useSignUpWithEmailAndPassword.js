@@ -33,7 +33,7 @@ const useSignUpWithEmailAndPassword = () => {
     const q = query(usersRef, where("username", "==", inputs.username));
     const querySnapshot = await getDocs(q);
 
-    if (querySnapshot.empty) {
+    if (!querySnapshot.empty) {
       showToast("Error", "Username already exists", "error");
       return;
     }
