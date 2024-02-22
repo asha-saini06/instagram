@@ -16,7 +16,7 @@ This repository contains the code for an Instagram clone, built using React and 
 - **React**: Frontend framework for building user interfaces.
 - **Firebase**: Backend service for authentication, storage, and database functionalities.
 - **React Router**: For handling navigation within the application.
-- **Material-UI**: UI framework for styling components.
+- **Chakra UI**: UI library for building accessible and customizable React components.
 
 ## Installation
 
